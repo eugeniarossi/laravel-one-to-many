@@ -12,4 +12,10 @@ class Project extends Model
     //protected $fillable = ['title', 'content']; // aggiornerà title e content
 
     protected $guarded = ['slug', 'image']; // aggiornerà tutto tranne lo slug e l'immagine
+
+    // il progetto appartiene ad un type
+    public function type()
+    {
+        return $this->belongsTo(Project::class);
+    }
 }
