@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
         // per eseguire tutti i seeder insieme li specifico: 
 
         $this->call([
+            TypeSeeder::class,
             ProjectSeeder::class
         ]);
     }
