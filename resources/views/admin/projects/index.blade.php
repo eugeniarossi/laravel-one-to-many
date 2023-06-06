@@ -20,6 +20,7 @@
             <tr>
             <th scope="col">#</th>
             <th scope="col">Title</th>
+            <th scope="col">Type</th>
             <th scope="col">Image</th>
             <th scope="col">Content</th>
             <th scope="col">Slug</th>
@@ -33,6 +34,7 @@
             <tr>
             <th scope="row">{{ $project->id }}</th>
             <td>{{ $project->title }}</td>
+            <td>{{ $project->type?->name ?: 'None' }}</td>
             <td>
               @if ($project->image)
               <img src="{{ asset('storage/' . $project->image) }}" alt="{{ $project->title }}" class="card-img-top img-thumbnail">
