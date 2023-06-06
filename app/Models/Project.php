@@ -16,6 +16,6 @@ class Project extends Model
     // il progetto appartiene ad un type
     public function type()
     {
-        return $this->belongsTo(Project::class);
+        return $this->belongsTo(Type::class);
     }
 }

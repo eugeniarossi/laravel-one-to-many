@@ -32,7 +32,7 @@
         {{-- /content input --}}
         {{-- type input --}}
         <div class="mb-3">
-        <select class="form-select" name="type_id" id="type_id">
+          <select class="form-select" name="type_id" id="type_id">
             <option value="">Select type</option>
             @foreach ($types as $type)
               <option value="{{ $type->id}}" {{ old('type_id') == $type->id ? 'selected' : '' }}>{{ $type->name }}</option>
