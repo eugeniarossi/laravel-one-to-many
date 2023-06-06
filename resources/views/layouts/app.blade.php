@@ -5,17 +5,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- CSRF Token -->
+    {{-- CSRF Token --}}
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
 
-    <!-- Fonts -->
+    {{-- Fonts --}}
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
-    <!-- Usando Vite -->
+    {{-- Usando Vite --}}
     @vite(['resources/js/app.js'])
 </head>
 
@@ -36,26 +36,32 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
+                    {{-- Left Side Of Navbar --}}
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
                             <a class="nav-link" href="{{url('/') }}">{{ __('Home') }}</a>
                         </li>
-                        <!-- area visibile solo se loggato -->
+                        {{-- area visibile solo se loggato --}}
                         @auth
+                            {{-- dashboard --}}
                             <li class="nav-item">
                                 <a class="nav-link" href="{{route('admin.dashboard') }}">{{ __('Dashboard') }}</a>
                             </li>
+                            {{-- projects --}}
                             <li class="nav-item">
                                 <a class="nav-link" href="{{route('admin.projects.index') }}">{{ __('Projects') }}</a>
                             </li>
+                            {{-- types --}}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{route('admin.types.index') }}">{{ __('Types') }}</a>
+                            </li>
                         @endauth
-                        <!-- /area visibile solo se loggato -->
+                        {{-- /area visibile solo se loggato --}}
                     </ul>
 
-                    <!-- Right Side Of Navbar -->
+                    {{-- Right Side Of Navbar --}}
                     <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
+                        {{-- Authentication Links --}}
                         @guest
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>

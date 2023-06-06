@@ -17,7 +17,7 @@ class TypeSeeder extends Seeder
      */
     public function run()
     {
-        $types = ['app', 'game', 'frontend', 'backend', 'database'];
+        $types = ['App', 'Game', 'Frontend', 'Backend', 'Database'];
 
         Schema::disableForeignKeyConstraints(); // disabilita la chiave esterna
         Type::truncate(); // svuota la tabella
@@ -26,7 +26,7 @@ class TypeSeeder extends Seeder
         foreach ($types as $type) {
             $new_type = new Type();
             $new_type->name = $type;
-            $new_type->slug = Str::slug($new_type->title, '-');
+            $new_type->slug = Str::slug($new_type->name, '-');
             $new_type->save();
         }
     }
